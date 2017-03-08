@@ -1,0 +1,366 @@
+@charset "utf-8";
+
+/*
+CSS RESET
+
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* VARIABLES */
+
+$primary-color: #113e6d; /* BREWER BLUE */
+
+$secondary-color: #c1c4c4; /* COWBOY GRAY */
+
+$tertiary-color: #ffbf00; /* PACKER GOLD */
+
+$quaternary-color: #294239; /* PACKER GREEN */
+
+$quinary-color: #b70101; /* BADGER RED */
+
+$font-stack1: 'Merienda One', cursive;
+
+$font-stack2: 'Kite One', sans-serif;
+
+$font-stack3: 'Sintony', sans-serif;
+
+
+/* MIXINS */
+
+
+@mixin heading {
+	font: bold 1.8em $font-stack1;
+}
+
+@mixin heading2 {
+	font: bold 1.6em $font-stack2;
+}
+
+@mixin heading3 {
+	font: bold 1.4em $font-stack2;
+}
+
+@mixin para {
+	font: 1.2em $font-stack3;
+}
+
+@mixin image-rotate {
+	margin: 20px auto 0 auto;
+	-moz-transition: all 0.8s ease-in-out;
+	-webkit-transition: all 0.8s ease-in-out;
+	-o-transition: all 0.8s ease-in-out;
+	-ms-transition: all 0.8s ease-in-out;
+	transition: all 0.8s ease-in-out;
+}
+
+@mixin image-rotate-hover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);	
+}
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+/* PAGE STYLES */
+
+
+body {
+	background-color: $primary-color;
+	font-family: $font-stack3;
+	font-size: 62.5%;
+}
+
+
+#center {
+	margin: 0 auto; 
+	background-color: $secondary-color;
+	width: 800px;
+}
+
+header {
+	margin: 100px 0 0 0;
+}
+
+
+
+header h1{
+	position: absolute;
+	left: -1000em;
+}
+
+h1 {
+
+}
+
+h2 {
+	@include heading;
+}
+
+h3 {
+	@include heading2;
+}
+
+p {
+	@include para;
+}
+
+a {
+	color: $tertiary-color;
+}
+
+.stitched {
+   padding: 20px;
+   margin: 10px;
+   background: $secondary-color;
+   color: #000000;
+   border: 2px dashed #000000;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px $secondary-color, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   text-shadow: -1px -1px #fff;
+   font-weight: normal;
+}
+
+.stitched-heading {
+   padding: 20px;
+   margin: 10px;
+   background: $primary-color;
+   color: #fff;
+   font-weight: bold;
+   border: 2px dashed #fff;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px $primary-color, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   text-shadow: -1px -1px #000000;
+}
+
+
+
+/* Navigation */
+
+
+/* End Navigation */
+
+
+
+#menu-icon {
+
+	display: hidden;
+	width: 50px;
+	height: 75px;
+	background: url(tnpics/mobile-menu.png) right;
+
+}
+
+a:hover#menu-icon {
+
+	background-color: #CCC;
+
+}
+
+#mobile-menu ul li {
+	display: none;
+}
+
+img#norm {
+	@include image-rotate;
+}
+
+img#norm:hover{
+	@include image-rotate-hover;
+}
+
+
+p {
+	text-indent: 2em;
+	font: $font-stack3;
+	line-height: 23px;
+	font-weight: 500;
+	font-size: 1.2em;
+}
+
+#feedback {
+	width: 450px;
+	float: left;
+	margin-left: 150px;
+}
+
+#podcast {
+	width: 800px;
+	margin-left: 40px;
+	text-align: center;
+}
+
+/* Table Styles */
+
+table {
+
+}
+
+/* End Table Styles */
+
+
+/*  Portfolio Page  */
+
+.single-site {
+	padding: 10px;
+	margin: 0 auto 20px auto;
+	width: 642px;
+	border-radius: 5px 5px 0 0;
+}
+
+.portfolio-background-1 {
+	background: url("tnpics/portfolio-background-1.png") no-repeat left top;
+}
+
+.portfolio-background-2 {
+	background: url("tnpics/portfolio-background-2.png") no-repeat left top;
+}
+
+.portfolio-background-3 {
+	background: url("tnpics/portfolio-background-3.png") no-repeat left top;
+}
+
+.portfolio-background-4 {
+	background: url("tnpics/portfolio-background-4.png") no-repeat left top;
+}
+
+.single-site h2 a {
+	font-size: 1.5em;
+	padding: 5px;
+	color: #fff;
+	font-weight: bold;
+}
+
+.single-site p {
+	font-size: 1.1em;
+	padding: 10px;
+	color: #fff;
+	line-height: 1.4em;
+}
+
+#logos {
+	background: #fff;
+}
+
+.logo-creation {
+	display: block;
+	width: 250px;
+	padding: 10px;
+	margin: 10px auto 10px auto;
+	text-align: center;
+	
+}
+
+.logo-creation h2 {
+	font-size: 1.4em;
+	line-height: 1.6em;
+}
+
+
+
+
+/* Contact Page */
+/*
+form {
+	background: #71624f;
+	width: 350px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	margin: 50px auto 5px auto;
+	padding: 10px;
+}
+
+fieldset {
+	margin: 10px;
+	padding: 10px;
+}
+
+#message {
+	width: 200px;
+	height: 200px;
+}
+
+legend {
+	font-size: 1.4em;
+	line-height: 1.5em;
+	margin-bottom: 0 !important;
+	border: none !important;
+}
+*/
+
+
+/* Footer */
+
+#footer {
+	clear: both; 
+	background: #7c765b;
+	color: #FFF;
+	height: 50px;
+}
+
+#footer p {
+	float: right;
+	margin: 15px 10px 0px 0px;
+	font-size: 1.3em;
+}
+
+
+
+/* BOOTSTRAP STYLING */
+
